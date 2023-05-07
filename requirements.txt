@@ -1,0 +1,4 @@
+flask
+langdetect
+textblob
+spacy
