@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background: url('https://img.freepik.com/free-vector/abstract-shiny-lines-white-gray-background_1017-25097.jpg?w=2000') no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+        .form-group{
+          margin-top: 5rem;
+        }
+        p{
+          margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form method="post" action="/detect_language">
+        <div class="form-group">
+          <label for="CI">Context Identification</label>
+          <input type="text" name="input" class="form-control" id="CI" placeholder="Enter Text...">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p>Language Detected: {{language}}
+    </p>
+    <form method="post" action="/calculate_sentiment">
+      <div class="form-group">
+        <label for="RV">Sentiment Analysis</label>
+        <input type="text" name="input" class="form-control" id="RV" placeholder="Enter Text...">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <p>
+    Sentiment Analysis Score : {{sentiment}}
+  </p>
+    <form method="post" action="/organization">
+        <div class="form-group">
+          <label for="OD">Organization Discovery</label>
+          <input type="text" name="input" class="form-control" id="OD" placeholder="Enter Text...">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p>
+      Organization Name: {{org}}
+    </p>
+    <form method="post" action="/contact">
+        <div class="form-group">
+          <label for="CIE">Contact Information Extraction</label>
+          <input type="text" name="input" class="form-control" id="CIE" placeholder="Enter Text...">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p>
+      Name: {{contact[0]}}
+    </p>
+    <p>Phone No.:  {{contact[1]}}</p>
+    <p>Email:  {{contact[2]}}</p>
+    </div>
+</body>
+</html>
